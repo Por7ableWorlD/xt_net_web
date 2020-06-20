@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library_for_working_with_strings
 {
-    public class String_as_ArrayOfCharacters
+    public class StringAsArrayOfCharacters
     {
         private char[] array;
 
@@ -19,9 +19,45 @@ namespace Library_for_working_with_strings
         }
 
 
-        public String_as_ArrayOfCharacters(string line)
+        public StringAsArrayOfCharacters(string line)
         {
             array = line.ToCharArray();
+        }
+
+
+        public char this[int index]
+        {
+            get
+            {
+                return array[index];
+            }
+            set
+            {
+                array[index] = value;
+            }
+        }
+
+
+        public static StringAsArrayOfCharacters operator +(StringAsArrayOfCharacters first_line, StringAsArrayOfCharacters second_line)
+        {
+            string third_String = first_line.ToString() + second_line.ToString();
+            return new StringAsArrayOfCharacters (third_String);
+        }
+
+
+        public static StringAsArrayOfCharacters Concatenation(StringAsArrayOfCharacters first_line, StringAsArrayOfCharacters second_line)
+        {
+            return first_line + second_line;
+        }
+
+
+        public static bool Comparison(StringAsArrayOfCharacters first_line, StringAsArrayOfCharacters second_line)
+            => string.Compare(first_line.ToString(), second_line.ToString()) == 0 ? true : false;
+
+
+        public static int Searching(StringAsArrayOfCharacters first_line, StringAsArrayOfCharacters second_line, char symbol)
+        {
+            return (first_line + second_line).ToString().IndexOf(symbol);
         }
 
 
@@ -34,50 +70,6 @@ namespace Library_for_working_with_strings
             }
 
             return line.ToString();
-        }
-
-
-        public char this[int index]
-        {  
-            get
-            {
-                return array[index];
-            }
-            set
-            {
-                array[index] = value;
-            }
-        }
-
-
-        public static String_as_ArrayOfCharacters operator +(String_as_ArrayOfCharacters first_line, String_as_ArrayOfCharacters second_line)
-        {
-            return new String_as_ArrayOfCharacters (first_line.ToString() + second_line.ToString());
-        }
-
-
-        public static String_as_ArrayOfCharacters Concatenation(String_as_ArrayOfCharacters first_line, String_as_ArrayOfCharacters second_line)
-        {
-            return first_line + second_line;
-        }
-
-
-        public static bool Comparison(String_as_ArrayOfCharacters first_line, String_as_ArrayOfCharacters second_line)
-        {
-            if (string.Compare(first_line.ToString(), second_line.ToString()) == 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-
-        public static int Searching(String_as_ArrayOfCharacters first_line, String_as_ArrayOfCharacters second_line, char symbol)
-        {
-            return (first_line + second_line).ToString().IndexOf(symbol);
         }
     }
 }

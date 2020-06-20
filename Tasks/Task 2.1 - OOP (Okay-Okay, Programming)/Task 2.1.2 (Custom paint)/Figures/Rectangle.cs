@@ -8,36 +8,33 @@ namespace Task_2._1._2__Custom_paint_
 {
     class Rectangle : AbstractFigure
     {
-        private bool flag = true;
-        private double second_side;
+        private double second_Side;
 
-        public Rectangle()
+        public Rectangle() : base()
         {
-            flag = false;
+
         }
 
-        public Rectangle(double first_side, double second_side)
+        public Rectangle(double first_Side, double second_Side) : base (first_Side)
         {
-            this.first_side = first_side;
-            this.second_side = second_side;
-            flag = true;
+            this.second_Side = second_Side;
         }
 
         protected override double Area
         {
-            get => first_side * second_side;
+            get => Math.Round(first_Side * second_Side, 2);
         }
 
-        protected override double Perimeter
-        {
-            get => 2 * (first_side + second_side);
-        }
-
-        public override void GetInfo()
+        public override string GetInfo()
         {
             if (flag == !false)
             {
-                Console.WriteLine($"\n\tПрямоугольник:\n\tПлощадь = {Area}\n\tПериметр = {Perimeter}\n");
+                string info = $"\n\tПрямоугольник:\n\tПлощадь = {Area}\n";
+                return info;
+            }
+            else
+            {
+                return "";
             }
         }
     }

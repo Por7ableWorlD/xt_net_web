@@ -8,37 +8,40 @@ namespace Task_2._1._2__Custom_paint_
 {
     class Triangle : AbstractFigure
     {
-        private bool flag = true;
-        private double second_side, third_side;
+        private double second_Side;
+        private double third_Side;
 
-        public Triangle()
+        public Triangle() : base()
         {
-            flag = false;
+
         }
 
-        public Triangle(double first_side, double second_side, double third_side)
+        public Triangle(double first_Side, double second_Side, double third_Side) : base (first_Side)
         {
-            this.first_side = first_side;
-            this.second_side = second_side;
-            this.third_side = third_side;
-            flag = true;
+            this.second_Side = second_Side;
+            this.third_Side = third_Side;
         }
 
-        protected override double Perimeter
+        protected double Perimeter
         {
-            get => first_side + second_side + third_side;
+            get => first_Side + second_Side + third_Side;
         }
 
         protected override double Area
         {
-            get => Math.Sqrt(Perimeter/2*(((Perimeter/2) - first_side) * ((Perimeter / 2) - second_side) * ((Perimeter / 2) - third_side)));
+            get => Math.Round(Math.Sqrt(Perimeter/2*(((Perimeter/2) - first_Side) * ((Perimeter / 2) - second_Side) * ((Perimeter / 2) - third_Side))),2);
         }
 
-        public override void GetInfo()
+        public override string GetInfo()
         {
             if (flag == !false)
             {
-                Console.WriteLine($"\n\tТреугольник:\n\tПлощадь = {Area}\n\tПериметр = {Perimeter}\n");
+                string info = $"\n\tТреугольник:\n\tПлощадь = {Area}\n";
+                return info;
+            }
+            else
+            {
+                return "";
             }
         }
     }

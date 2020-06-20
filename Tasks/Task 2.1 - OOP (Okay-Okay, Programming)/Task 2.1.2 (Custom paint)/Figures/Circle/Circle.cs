@@ -9,19 +9,15 @@ namespace Task_2._1._2__Custom_paint_
     public class Circle : AbstractCircle
     {
         private int radius;
-        private bool flag = true;
 
-        public Circle()
+        public Circle() : base()
         {
-            flag = false;
+
         }
 
-        public Circle(int center_x, int center_y, int radius)
+        public Circle(int center_X, int center_Y, int radius) : base (center_X, center_Y)
         {
-            this.center_x = center_x;
-            this.center_y = center_y;
             this.radius = radius;
-            flag = true;
         }
 
         protected override double Area
@@ -34,11 +30,16 @@ namespace Task_2._1._2__Custom_paint_
             get => Math.Round(2 * Math.PI * radius, 2);
         }
 
-        public override void GetInfo()
+        public override string GetInfo()
         {
             if (flag == !false)
             {
-                Console.WriteLine($"\n\tКруг:\n\tПлощадь = {Area}\n\tДлина = {Circumference}\n");
+                string info = $"\n\tКруг:\n\tПлощадь = {Area}\n\tДлина = {Circumference}\n";
+                return info;
+            }
+            else
+            {
+                return "";
             }
         }
     }

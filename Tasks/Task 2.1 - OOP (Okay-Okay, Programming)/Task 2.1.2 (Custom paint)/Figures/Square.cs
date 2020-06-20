@@ -8,34 +8,31 @@ namespace Task_2._1._2__Custom_paint_
 {
     class Square : AbstractFigure
     {
-        private bool flag = true;
-
-        public Square()
+        public Square() : base()
         {
-            flag = false;
+
         }
 
-        public Square(double first_side)
+        public Square(double first_Side) : base (first_Side)
         {
-            this.first_side = first_side;
-            flag = true;
+
         }
 
         protected override double Area
         {
-            get => Math.Pow(first_side, 2);
+            get => Math.Round(Math.Pow(first_Side, 2), 2);
         }
 
-        protected override double Perimeter
-        {
-            get => first_side * 4;
-        }
-
-        public override void GetInfo()
+        public override string GetInfo()
         {
             if (flag == !false)
             {
-                Console.WriteLine($"\n\tКвадрат:\n\tПлощадь = {Area}\n\tПериметр = {Perimeter}\n");
+                string info = $"\n\tКвадрат:\n\tПлощадь = {Area}\n";
+                return info;
+            }
+            else
+            {
+                return "";
             }
         }
     }

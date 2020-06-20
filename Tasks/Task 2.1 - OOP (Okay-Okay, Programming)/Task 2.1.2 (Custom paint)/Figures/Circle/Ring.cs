@@ -8,38 +8,40 @@ namespace Task_2._1._2__Custom_paint_
 {
     public class Ring : AbstractCircle
     {
-        private int outer_radius, inner_radius;
-        private bool flag = true;
+        private int outer_Radius;
+        private int inner_Radius;
 
-        public Ring()
+        public Ring() : base()
         {
-            flag = false;
+
         }
 
-        public Ring(int center_x, int center_y, int inner_radius, int outer_radius)
+        public Ring(int center_X, int center_Y, int inner_Radius, int outer_Radius) : base (center_X, center_Y)
         {
-            this.center_x = center_x;
-            this.center_y = center_y;
-            this.inner_radius = inner_radius;
-            this.outer_radius = outer_radius;
-            flag = true;
+            this.inner_Radius = inner_Radius;
+            this.outer_Radius = outer_Radius;
         }
 
         protected override double Area
         {
-            get => Math.Round((Math.PI * Math.Pow(outer_radius, 2)) - (Math.PI * Math.Pow(inner_radius, 2)), 2);
+            get => Math.Round((Math.PI * Math.Pow(outer_Radius, 2)) - (Math.PI * Math.Pow(inner_Radius, 2)), 2);
         }
 
         protected override double Circumference
         {
-            get => Math.Round((2 * Math.PI * outer_radius) + (2 * Math.PI * inner_radius), 2);
+            get => Math.Round((2 * Math.PI * outer_Radius) + (2 * Math.PI * inner_Radius), 2);
         }
 
-        public override void GetInfo()
+        public override string GetInfo()
         {
             if (flag == !false)
             {
-                Console.WriteLine($"\n\tКольцо:\n\tПлощадь = {Area}\n\tДлина = {Circumference}\n");
+                string info = $"\n\tКольцо:\n\tПлощадь = {Area}\n\tДлина = {Circumference}\n";
+                return info;
+            }
+            else
+            {
+                return "";
             }
         }
     }

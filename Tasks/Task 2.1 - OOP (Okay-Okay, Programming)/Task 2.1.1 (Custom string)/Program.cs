@@ -11,14 +11,14 @@ namespace Task_2._1._1__Custom_string_
     {
         static void Main(string[] args)
         {
-            var first_string = new String_as_ArrayOfCharacters("Hello");
-            var second_string = new String_as_ArrayOfCharacters(" world!");
+            var first_String = new StringAsArrayOfCharacters("Hello");
+            var second_String = new StringAsArrayOfCharacters(" world!");
 
 
-            Console.WriteLine($"Length:\nfirst_string = {first_string.Length}\nsecond_string = {second_string.Length}\n");
+            Console.WriteLine($"Length:\nfirst_string = {first_String.Length}\nsecond_string = {second_String.Length}\n");
 
 
-            if (String_as_ArrayOfCharacters.Comparison(first_string, second_string))
+            if (StringAsArrayOfCharacters.Comparison(first_String, second_String))
              {
                  Console.WriteLine($"Comparison: Lines are equal!\n");
              }
@@ -28,10 +28,10 @@ namespace Task_2._1._1__Custom_string_
              }
 
 
-            Console.WriteLine($"Сoncatenation: {String_as_ArrayOfCharacters.Concatenation(first_string, second_string)}\n");
+            Console.WriteLine($"Сoncatenation: {StringAsArrayOfCharacters.Concatenation(first_String, second_String)}\n");
 
 
-            int search = String_as_ArrayOfCharacters.Searching(first_string, second_string, 'r');
+            int search = StringAsArrayOfCharacters.Searching(first_String, second_String, 'r');
             if (search != -1)
             {
                 Console.WriteLine($"Searching: Index of your symbol = {search}\n");

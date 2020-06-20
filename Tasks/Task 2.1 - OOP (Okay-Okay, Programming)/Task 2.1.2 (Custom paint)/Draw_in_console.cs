@@ -9,11 +9,14 @@ namespace Task_2._1._2__Custom_paint_
     public class Draw_in_console
     {
         static string name = null;
+
+        // And this "flag" I need to use for formatted data output without extra rows of information for the user.
         static bool flag = false;
+
         static Circle circle = new Circle();
+        static Rectangle rectangle = new Rectangle();
         static Ring ring = new Ring();
         static Square square = new Square();
-        static Rectangle rectangle = new Rectangle();
         static Triangle triangle = new Triangle();
 
         public static void Draw()
@@ -23,7 +26,9 @@ namespace Task_2._1._2__Custom_paint_
                 Console.Write("Введите Ваше имя: ");
                 name = Console.ReadLine();
             }
+
             Console.WriteLine($"{name}, выберите действие:");
+
             if (flag == !true)
             {
                 Console.Write("\tДобавить фигуру - 1\n\tСменить пользователя - 4\n\tВыход - 5\nВаше число - ");
@@ -33,6 +38,7 @@ namespace Task_2._1._2__Custom_paint_
                 Console.Write("\tДобавить фигуру - 1\n\tВывести все добавленные фигуры - 2\n\tОчистить холст - 3" +
                     "\n\tСменить пользователя - 4\n\tВыход - 5\nВаше число - ");
             }
+
             var _first_input = Console.ReadLine();
             if (int.TryParse(_first_input, out var first_input) == !true)
             {
@@ -45,7 +51,9 @@ namespace Task_2._1._2__Custom_paint_
                     case 1:
                         Console.WriteLine($"\n{name}, выберите тип фигуры:");
                         Console.Write("\tКруг - 1\n\tКольцо - 2\n\tКвадрат - 3\n\tПрямоугольник - 4\n\tТреугольник - 5\nВаше число - ");
+
                         var _second_input = Console.ReadLine();
+
                         if (int.TryParse(_second_input, out var second_input) == !true)
                         {
                             Console.WriteLine($"\n{name}, вы ввели неверные данные!");
@@ -57,10 +65,12 @@ namespace Task_2._1._2__Custom_paint_
                             {
                                 case 1:
                                     Console.WriteLine($"\n{name}, введите параметры фигуры круг:");
+
                                     Console.Write("\tКоордината центра по оси x = ");
                                     var _first_center_x = Console.ReadLine();
                                     Console.Write("\tКоордината центра по оси y = ");
                                     var _first_center_y = Console.ReadLine();
+
                                     if (int.TryParse(_first_center_x, out var first_center_x) == !true || int.TryParse(_first_center_y, out var first_center_y) == !true)
                                     {
                                         Console.WriteLine($"\n{name}, вы ввели неверные данные!");
@@ -79,7 +89,7 @@ namespace Task_2._1._2__Custom_paint_
                                         {
                                             Console.WriteLine("\nФигура круг создана! Вот её характеристики: ");
                                             circle = new Circle(first_center_x, first_center_y, radius);
-                                            circle.GetInfo();
+                                            Console.WriteLine(circle.GetInfo());
                                             flag = true;
                                             Draw();
                                             break;
@@ -87,10 +97,12 @@ namespace Task_2._1._2__Custom_paint_
                                     }
                                 case 2:
                                     Console.WriteLine($"\n{name}, введите параметры фигуры кольцо:");
+
                                     Console.Write("\tКоордината центра по оси x = ");
                                     var _second_center_x = Console.ReadLine();
                                     Console.Write("\tКоордината центра по оси y = ");
                                     var _second_center_y = Console.ReadLine();
+
                                     if (int.TryParse(_second_center_x, out var second_center_x) == !true || int.TryParse(_second_center_y, out var second_center_y) == !true)
                                     {
                                         Console.WriteLine($"\n{name}, вы ввели неверные данные!");
@@ -102,6 +114,7 @@ namespace Task_2._1._2__Custom_paint_
                                         var _inner_radius = Console.ReadLine();
                                         Console.Write("\tВнешний радиус кольца = ");
                                         var _outer_radius = Console.ReadLine();
+
                                         if (int.TryParse(_inner_radius, out var inner_radius) == !true || int.TryParse(_outer_radius, out var outer_radius) == !true 
                                             || inner_radius < 0 || outer_radius < 0 || inner_radius >= outer_radius)
                                         {
@@ -112,7 +125,7 @@ namespace Task_2._1._2__Custom_paint_
                                         {
                                             Console.WriteLine("\nФигура кольцо создана! Вот её характеристики: ");
                                             ring = new Ring(second_center_x, second_center_y, inner_radius, outer_radius);
-                                            ring.GetInfo();
+                                            Console.WriteLine(ring.GetInfo());
                                             flag = true;
                                             Draw();
                                             break;
@@ -120,8 +133,10 @@ namespace Task_2._1._2__Custom_paint_
                                     }
                                 case 3:
                                     Console.WriteLine($"\n{name}, введите параметры фигуры квадрат:");
+
                                     Console.Write("\tВведите сторону = ");
                                     var _side = Console.ReadLine();
+
                                     if (int.TryParse(_side, out var side) == !true)
                                     {
                                         Console.WriteLine($"\n{name}, вы ввели неверные данные!");
@@ -131,17 +146,19 @@ namespace Task_2._1._2__Custom_paint_
                                     {
                                         Console.WriteLine("\nФигура квадрат создана! Вот её характеристики: ");
                                         square = new Square(side);
-                                        square.GetInfo();
+                                        Console.WriteLine(square.GetInfo());
                                         flag = true;
                                         Draw();
                                         break;
                                     }
                                 case 4:
                                     Console.WriteLine($"\n{name}, введите параметры фигуры прямоугольник:");
+
                                     Console.Write("\tВведите первую сторону = ");
                                     var _first_side = Console.ReadLine();
                                     Console.Write("\tВведите вторую сторону = ");
                                     var _second_side = Console.ReadLine();
+
                                     if (int.TryParse(_first_side, out var first_side) == !true || int.TryParse(_second_side, out var second_side) == !true )
                                     {
                                         Console.WriteLine($"\n{name}, вы ввели неверные данные!");
@@ -151,19 +168,21 @@ namespace Task_2._1._2__Custom_paint_
                                     {
                                         Console.WriteLine("\nФигура прямоугольник создана! Вот её характеристики: ");
                                         rectangle = new Rectangle(first_side, second_side);
-                                        rectangle.GetInfo();
+                                        Console.WriteLine(rectangle.GetInfo());
                                         flag = true;
                                         Draw();
                                         break;
                                     }
                                 case 5:
                                     Console.WriteLine($"\n{name}, введите параметры фигуры треугольник:");
+
                                     Console.Write("\tВведите первую сторону = ");
                                     var _first_side_ = Console.ReadLine();
                                     Console.Write("\tВведите вторую сторону = ");
                                     var _second_side_ = Console.ReadLine();
                                     Console.Write("\tВведите третью сторону = ");
                                     var _third_side = Console.ReadLine();
+
                                     if (int.TryParse(_first_side_, out var first_side_) == !true || int.TryParse(_second_side_, out var second_side_) == !true
                                         || int.TryParse(_third_side, out var third_side) == !true)
                                     {
@@ -174,7 +193,7 @@ namespace Task_2._1._2__Custom_paint_
                                     {
                                         Console.WriteLine("\nФигура треугольник создана! Вот её характеристики: ");
                                         triangle = new Triangle(first_side_, second_side_, third_side);
-                                        triangle.GetInfo();
+                                        Console.WriteLine(triangle.GetInfo());
                                         flag = true;
                                         Draw();
                                         break;
@@ -186,22 +205,23 @@ namespace Task_2._1._2__Custom_paint_
                             break;
                         }
                     case 2:
-                        if (flag == !true)
+                        if (flag == !true) //if no instance of the class has been created yet, and the number was clicked
                         {
                             Console.WriteLine($"\n{name}, такое число отсутствует.");
                             break;
                         }
                         else
                         {
-                            circle.GetInfo();
-                            ring.GetInfo();
-                            square.GetInfo();
-                            rectangle.GetInfo();
-                            triangle.GetInfo();
+                            Console.WriteLine(circle.GetInfo());
+                            Console.WriteLine(ring.GetInfo());
+                            Console.WriteLine(square.GetInfo());
+                            Console.WriteLine(rectangle.GetInfo());
+                            Console.WriteLine(triangle.GetInfo());
                             break;
                         }
                     case 3:
-                        if (flag == !true)
+                        if (flag == !true) //if the number was clicked, but the class instance has not been created, 
+                                           //then we can't clear the canvas yet
                         {
                             Console.WriteLine($"\n{name}, такое число отсутствует.");
                             break;
@@ -214,6 +234,13 @@ namespace Task_2._1._2__Custom_paint_
                             break;
                         }
                     case 4:
+
+                        circle = new Circle();
+                        rectangle = new Rectangle();
+                        ring = new Ring();
+                        square = new Square();
+                        triangle = new Triangle();
+
                         Console.Clear();
                         name = null;
                         flag = false;

@@ -6,11 +6,25 @@ using System.Threading.Tasks;
 
 namespace Task_2._1._2__Custom_paint_
 {
-    abstract class AbstractFigure
+    public abstract class AbstractFigure
     {
-        protected double first_side;
+        protected double first_Side;
+
+        // I use this "flag" in the override GetInfo methods.
+        // Cause I always call GetInfo for all instances of classes in the Draw_in_console class, 
+        // I need to check the creation of an instance of the class with specific parameters
+        protected bool flag = true;
+
+        protected AbstractFigure() => flag = false;
+
+        protected AbstractFigure(double first_Side)
+        {
+            this.first_Side = first_Side;
+            flag = true;
+        }
+
         protected abstract double Area { get; }
-        protected abstract double Perimeter { get; }
-        public abstract void GetInfo();
+
+        public abstract string GetInfo();
     }
 }
