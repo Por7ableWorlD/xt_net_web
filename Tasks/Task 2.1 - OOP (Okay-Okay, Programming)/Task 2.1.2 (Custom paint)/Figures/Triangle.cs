@@ -36,7 +36,7 @@ namespace Task_2._1._2__Custom_paint_
         {
             if (flag == !false)
             {
-                string info = $"\n\tТреугольник:\n\tПлощадь = {Area}\n";
+                info = $"\n\tТреугольник:\n\tПлощадь = {Area}\n";
                 return info;
             }
             else

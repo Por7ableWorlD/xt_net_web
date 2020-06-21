@@ -234,7 +234,8 @@ namespace Task_2._1._2__Custom_paint_
                             break;
                         }
                     case 4:
-
+                        //if the user changes, we need to delete all the shapes that they may have created, 
+                        //so that the new user doesn't display them
                         circle = new Circle();
                         rectangle = new Rectangle();
                         ring = new Ring();

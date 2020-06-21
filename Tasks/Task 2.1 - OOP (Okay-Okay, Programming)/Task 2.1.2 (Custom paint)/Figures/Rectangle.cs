@@ -29,7 +29,7 @@ namespace Task_2._1._2__Custom_paint_
         {
             if (flag == !false)
             {
-                string info = $"\n\tПрямоугольник:\n\tПлощадь = {Area}\n";
+                info = $"\n\tПрямоугольник:\n\tПлощадь = {Area}\n";
                 return info;
             }
             else

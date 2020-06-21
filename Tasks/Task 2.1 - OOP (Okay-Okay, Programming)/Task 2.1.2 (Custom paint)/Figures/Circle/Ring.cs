@@ -36,7 +36,7 @@ namespace Task_2._1._2__Custom_paint_
         {
             if (flag == !false)
             {
-                string info = $"\n\tКольцо:\n\tПлощадь = {Area}\n\tДлина = {Circumference}\n";
+                info = $"\n\tКольцо:\n\tПлощадь = {Area}\n\tДлина = {Circumference}\n";
                 return info;
             }
             else
