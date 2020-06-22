@@ -32,17 +32,11 @@ namespace Task_2._1._2__Custom_paint_
             get => Math.Round(Math.Sqrt(Perimeter/2*(((Perimeter/2) - first_Side) * ((Perimeter / 2) - second_Side) * ((Perimeter / 2) - third_Side))),2);
         }
 
-        public override string GetInfo()
+        protected override string Info
         {
-            if (flag == !false)
-            {
-                info = $"\n\tТреугольник:\n\tПлощадь = {Area}\n";
-                return info;
-            }
-            else
-            {
-                return "";
-            }
+            get => $"\n\tТреугольник:\n\tПлощадь = {Area}\n";
         }
+
+        public override string GetInfo() => flag == !false ? Info : "";
     }
 }

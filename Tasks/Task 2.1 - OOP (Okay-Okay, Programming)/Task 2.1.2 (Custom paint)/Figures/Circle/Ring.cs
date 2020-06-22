@@ -16,7 +16,7 @@ namespace Task_2._1._2__Custom_paint_
 
         }
 
-        public Ring(int center_X, int center_Y, int inner_Radius, int outer_Radius) : base (center_X, center_Y)
+        public Ring(int center_X, int center_Y, int inner_Radius, int outer_Radius) : base(center_X, center_Y)
         {
             this.inner_Radius = inner_Radius;
             this.outer_Radius = outer_Radius;
@@ -32,17 +32,11 @@ namespace Task_2._1._2__Custom_paint_
             get => Math.Round((2 * Math.PI * outer_Radius) + (2 * Math.PI * inner_Radius), 2);
         }
 
-        public override string GetInfo()
+        protected override string Info
         {
-            if (flag == !false)
-            {
-                info = $"\n\tКольцо:\n\tПлощадь = {Area}\n\tДлина = {Circumference}\n";
-                return info;
-            }
-            else
-            {
-                return "";
-            }
+            get => $"\n\tКольцо:\n\tПлощадь = {Area}\n\tДлина = {Circumference}\n";
         }
+
+        public override string GetInfo() => flag == !false ? Info : "";
     }
 }

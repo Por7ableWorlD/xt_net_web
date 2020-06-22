@@ -25,17 +25,11 @@ namespace Task_2._1._2__Custom_paint_
             get => Math.Round(first_Side * second_Side, 2);
         }
 
-        public override string GetInfo()
+        protected override string Info
         {
-            if (flag == !false)
-            {
-                info = $"\n\tПрямоугольник:\n\tПлощадь = {Area}\n";
-                return info;
-            }
-            else
-            {
-                return "";
-            }
+            get => $"\n\tПрямоугольник:\n\tПлощадь = {Area}\n";
         }
+
+        public override string GetInfo() => flag == !false ? Info : "";
     }
 }

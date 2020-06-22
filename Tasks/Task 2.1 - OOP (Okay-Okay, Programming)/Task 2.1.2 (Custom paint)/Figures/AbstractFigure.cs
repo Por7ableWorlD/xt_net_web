@@ -9,7 +9,6 @@ namespace Task_2._1._2__Custom_paint_
     public abstract class AbstractFigure
     {
         protected double first_Side;
-        protected string info;
 
         // I use this "flag" in the override GetInfo methods.
         // Cause I always call GetInfo for all instances of classes in the Draw_in_console class, 
@@ -25,6 +24,7 @@ namespace Task_2._1._2__Custom_paint_
         }
 
         protected abstract double Area { get; }
+        protected abstract string Info { get; }
 
         public abstract string GetInfo();
     }

@@ -30,18 +30,12 @@ namespace Task_2._1._2__Custom_paint_
             get => Math.Round(2 * Math.PI * radius, 2);
         }
 
-        public override string GetInfo()
+        protected override string Info
         {
-            if (flag == !false)
-            {
-                info = $"\n\tКруг:\n\tПлощадь = {Area}\n\tДлина = {Circumference}\n";
-                return info;
-            }
-            else
-            {
-                return "";
-            }
+            get => $"\n\tКруг:\n\tПлощадь = {Area}\n\tДлина = {Circumference}\n";
         }
+
+        public override string GetInfo() => flag == !false ? Info : "";
     }
 }
 
