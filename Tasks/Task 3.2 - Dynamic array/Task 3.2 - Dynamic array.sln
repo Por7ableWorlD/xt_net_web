@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1169
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task 3.2.1 (Dynamic array)", "Task 3.2.1 (Dynamic array)\Task 3.2.1 (Dynamic array).csproj", "{BFE2A108-5E30-48C7-998F-519634307C58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library_for_working_with_arrays", "Library_for_working_with_arrays\Library_for_working_with_arrays.csproj", "{48E5C252-C080-4593-9D7C-8A54A3139BEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFE2A108-5E30-48C7-998F-519634307C58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFE2A108-5E30-48C7-998F-519634307C58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFE2A108-5E30-48C7-998F-519634307C58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFE2A108-5E30-48C7-998F-519634307C58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48E5C252-C080-4593-9D7C-8A54A3139BEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48E5C252-C080-4593-9D7C-8A54A3139BEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48E5C252-C080-4593-9D7C-8A54A3139BEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48E5C252-C080-4593-9D7C-8A54A3139BEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2042C4D8-4BEF-43CB-9CB2-C946DCE94E33}
+	EndGlobalSection
+EndGlobal
