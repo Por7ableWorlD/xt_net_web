@@ -165,10 +165,12 @@ namespace Library_for_working_with_arrays
             }
         }
 
-        public IEnumerator<T> GetEnumerator()
+        public virtual IEnumerator<T> GetEnumerator()
         {
             for (int i = 0; i < Length; i++)
+            {
                 yield return array[i];
+            }
         }
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
@@ -199,14 +201,6 @@ namespace Library_for_working_with_arrays
                 }
             }
             return false;
-        }
-
-        public void Qwe()
-        {
-            for (int i = 0; i < Length; i++)
-            {
-                Console.Write($"{array[i]}, ");
-            }
         }
     }
 }
