@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+}
+
+.container-title {
+    margin: 15px;
+    margin-left: 6px;
+    font-family: sans-serif;
+}
+
+.menu {
+    margin: 6.5px;
+}
+
+.menu-container {
+    width: 200px;
+    margin: 6px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    font-family: serif;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: #fae696;
+    box-shadow: 5px 5px 0px #870000;
+    transition: 1s linear;
+}
+
+.menu-elem {
+    color: #870000;
+    line-height: 20px;
+    margin-top: 5px;
+}
+
+.menu-elem:hover {
+    cursor: pointer;
+    border-radius: 5px;
+    background: #fcf1c5;
+}

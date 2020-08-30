@@ -1,0 +1,99 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    font-family: sans-serif;
+}
+
+
+input {
+    height: 20px;
+}
+
+.overall-text {
+    margin: 15px;
+    margin-left: 0;
+    color: #000000;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.form {
+    width: 400px;
+    height: 270px;
+    display: flex;
+    flex-flow: column;
+    background: #0690cf;
+    border: 3px solid #0075b2;
+}
+
+.form-p {
+    color: #ffffff;
+}
+
+.form-head {
+    height: 60px;
+    padding-left: 20px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.form-head-text {
+    font-size: 24px;
+    margin-top: 18px;
+}
+
+.email {
+    height: 70px;
+    padding-left: 20px;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+}
+
+.email-input {
+    width: 320px;
+    margin-top: 3px;
+}
+
+.parole {
+    height: 65px;
+    display: flex;
+    flex-flow: row;
+    align-items: flex-end;
+}
+
+.parole-box {
+    margin-left: 20px;
+}
+
+.parole-input {
+    width: 148px;
+    margin-top: 3px;
+}
+
+.pushbutton {
+    height: 58px;
+    padding-left: 20px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.pushbutton-self {
+    width: 82px;
+    height: 26px;
+    border: none;
+    font-size: 12px;
+    overflow: hidden;
+    background: #ffdf7f;
+}
+
+.pushbutton-self:hover{
+    background: #ffd24d;
+}
+
+.pushbutton-self:active {
+    background: #ffc619;
+}
